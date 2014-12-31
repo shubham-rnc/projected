@@ -8,7 +8,7 @@
 
 handlers = [
 	["Indian Institute of Technology, Guwahati", "PG", "Engineering", "Computer Science", "FALSE"],
-	["Indian Institute of Technology, Kharagpur", "PG", "Engineering", "Mechanical Engineering", "FALSE"],
+	["Indian Institute of Technology, Kharagpur", "PG", "Engineering", "Mechanical Engineering", "TRUE"],
 	["Indian Institute of Management, Ahmedabad", "PG", "Management", "Business Administration", "TRUE"],
 	["Indian Institute of Technology, Gandhinagar", "UG", "Engineering", "Computer Science", "TRUE"],
 	["Birla Institute of Technology, Ranchi", "UG", "Engineering", "Computer Science", "TRUE"],

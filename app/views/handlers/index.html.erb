@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Values</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listings| %>
+      <tr>
+        <td><%= listings.stream %></td>
+        <td><%= listings.institution %></td>
+        <td><%= listings.course %></td>
+        <td><%= listings.level %></td>
+        <td><%= listings.activation %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

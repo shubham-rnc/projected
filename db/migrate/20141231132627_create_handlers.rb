@@ -6,7 +6,7 @@ class CreateHandlers < ActiveRecord::Migration
       t.string :course
       t.string :specialization
       t.boolean :activation
-
+      
       t.timestamps null: false
     end
   end
