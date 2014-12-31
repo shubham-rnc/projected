@@ -1,0 +1,21 @@
+<%= form_for(@allowedvalueslevel) do |f| %>
+  <% if @allowedvalueslevel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@allowedvalueslevel.errors.count, "error") %> prohibited this allowedvalueslevel from being saved:</h2>
+
+      <ul>
+      <% @allowedvalueslevel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :values %><br>
+    <%= f.text_field :values %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
