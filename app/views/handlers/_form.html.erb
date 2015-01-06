@@ -1,0 +1,37 @@
+<%= form_for(@handler) do |f| %>
+  <% if @handler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@handler.errors.count, "error") %> prohibited this test from being saved:</h2>
+
+      <ul>
+      <% @handler.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :institution %><br>
+    <%= f.text_field :institution %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br>
+    <%= f.collection_select(:level, Allowedvalueslevel.all, :values, :values, prompt: true) %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br>
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :stream %><br>
+    <%= f.text_field :stream %>
+  </div>
+  <div class="field">
+    <%= f.label :activation %><br>
+    <%= f.select :activation, options_for_select([TRUE, FALSE]) %>
+  </div>
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

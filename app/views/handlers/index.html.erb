@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<p> <%= link_to 'New listing', new_handler_path %></p>
 <h1>Listings</h1>
 
 <table>
@@ -11,18 +11,39 @@
   </thead>
 
   <tbody>
+    <tr><b>
+        <td>Serial No.</td>
+        <td>Listings ID</td>
+        <td>Stream</td>
+        <td>Institution</td>
+        <td>Course</td>
+        <td>Level/td>
+        <td>Activation</td>
+        </b>
+      </tr>
+      <% @slno = 1 %>
     <% @listings.each do |listings| %>
+      
       <tr>
+        <td><%= @slno %><% @slno = @slno+1 %></td>
+        <td><%= listings.id %></td>
         <td><%= listings.stream %></td>
         <td><%= listings.institution %></td>
         <td><%= listings.course %></td>
         <td><%= listings.level %></td>
         <td><%= listings.activation %></td>
-       
+       <td><%= link_to 'Show', handler_path(listings) %></td>
+        <td><%= link_to 'Edit', edit_handler_path(listings) %></td>
+        <td><%= link_to 'Destroy', handler_path(listings), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <b>Total count of listings: <%= @slno-1 %></b>
   </tbody>
 </table>
+
+
+
+
 
 <br>
 

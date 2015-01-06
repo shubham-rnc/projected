@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @handler.institution %>
+</p>
+
+<p>
+  <strong>Stream:</strong>
+  <%= @handler.stream %>
+</p>
+
+
+<p>
+  <strong>Level:</strong>
+  <%= @handler.level %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @handler.course %>
+</p>
+
+<p>
+  <strong>Activated?:</strong>
+  <%= @handler.activation %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_handler_path(@handler) %> |
+<%= link_to 'Back', handlers_path %>
