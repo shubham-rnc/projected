@@ -28,8 +28,11 @@ class Handler < ActiveRecord::Base
     	self.uniquenesscheck = item.delete(' ')
     	super   # calls the rails save function to store our object to the database
   	end
-
-
+  #serach for internal purposes
+  	def self.search(search)
+  		search_condition = "%" + search + "%"
+  		find(:all, :conditions => ['handlers.institution LIKE :q' , search_condition])
+	end
 end
 
 

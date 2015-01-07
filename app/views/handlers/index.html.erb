@@ -11,15 +11,15 @@
   </thead>
 
   <tbody>
-    <tr><b>
-        <td>Serial No.</td>
-        <td>Listings ID</td>
-        <td>Stream</td>
-        <td>Institution</td>
-        <td>Course</td>
-        <td>Level/td>
-        <td>Activation</td>
-        </b>
+    <tr>
+        <th>Serial No.</th>
+        <th>Listings ID</th>
+        <th>Stream</th>
+        <th>Institution</th>
+        <th>Course</th>
+        <th>Level</th>
+        <th>Activation</th>
+        
       </tr>
       <% @slno = 1 %>
     <% @listings.each do |listings| %>
@@ -37,14 +37,11 @@
         <td><%= link_to 'Destroy', handler_path(listings), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    <b>Total count of listings: <%= @slno-1 %></b>
+    <b>Total count of active listings: <%= @active %></b></br>
+    <b>Total count of inactive listings: <%= @inactive %></b></br>
+    <b>Total: <%= @active+@inactive %> 
   </tbody>
 </table>
-
-
-
-
-
 <br>
 
 

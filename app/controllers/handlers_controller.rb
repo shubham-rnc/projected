@@ -1,6 +1,15 @@
 class HandlersController < ApplicationController
 	def index
 	@listings = Handler.all
+    @active = 0
+    @inactive = 0
+  @listings.each do |listing|
+    if listing.activation 
+      @active = @active+1
+    else
+      @inactive = @inactive+1
+    end
+  end
 	end
 
 	def new
@@ -47,6 +56,10 @@ class HandlersController < ApplicationController
       format.html { redirect_to handlers_url, notice: 'Listings was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @items = Handler.search(params[:search])
   end
 
   private
