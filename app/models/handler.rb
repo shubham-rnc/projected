@@ -15,8 +15,8 @@ class Handler < ActiveRecord::Base
    
 	#validation starts for allowed values
 	
-	#allow = ["UG", "PG", "Online Certification", "Highschool", "Diploma"]
-	#validates :level, inclusion: {in: allow}
+	allow = ["UG", "PG", "Online Certification", "Highschool", "Diploma"]
+	validates :level, inclusion: {in: allow}
       
 
 #validations ends here
@@ -28,10 +28,22 @@ class Handler < ActiveRecord::Base
     	self.uniquenesscheck = item.delete(' ')
     	super   # calls the rails save function to store our object to the database
   	end
-  #serach for internal purposes
+
+#search for internal purposes
   	def self.search(search)
   		search_condition = "%" + search + "%"
-  		find(:all, :conditions => ['handlers.institution LIKE :q' , search_condition])
+  		resultsid = where("id like ?", "#{search}")
+  		if resultsid.empty?
+  			resultsininsti = where("institution like ?", "%#{search}%")
+  			resultsinstream = where("stream like ?", "%#{search}%")
+  			resultsincourse = where("course like ?", "%#{search}%")
+  			resultsinlevel = where("level like ?", "%#{search}%")
+  			result = resultsid+resultsininsti+resultsinstream+resultsincourse+resultsinlevel
+			searchresult = result.uniq
+		else
+			result = resultsid
+			searchresult = result.uniq
+		end	
 	end
 end
 

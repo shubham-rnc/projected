@@ -3,13 +3,13 @@ class HandlersController < ApplicationController
 	@listings = Handler.all
     @active = 0
     @inactive = 0
-  @listings.each do |listing|
-    if listing.activation 
-      @active = @active+1
-    else
-      @inactive = @inactive+1
+    @listings.each do |listing|
+      if listing.activation 
+        @active = @active+1
+      else
+        @inactive = @inactive+1
+      end
     end
-  end
 	end
 
 	def new
@@ -60,6 +60,15 @@ class HandlersController < ApplicationController
 
   def search
     @items = Handler.search(params[:search])
+    @active = 0
+    @inactive = 0
+      @items.each do |listing|
+        if listing.activation 
+          @active = @active+1
+        else
+          @inactive = @inactive+1
+        end
+      end
   end
 
   private
