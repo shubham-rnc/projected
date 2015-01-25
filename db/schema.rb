@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125204920) do
+ActiveRecord::Schema.define(version: 20150125212317) do
 
   create_table "allowedvalueslevels", force: :cascade do |t|
     t.string   "values"
@@ -23,11 +23,24 @@ ActiveRecord::Schema.define(version: 20150125204920) do
     t.string   "level"
     t.string   "course"
     t.boolean  "activation"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "stream"
     t.string   "uniquenesscheck"
     t.integer  "institutehandler_id"
+    t.text     "eligibility"
+    t.string   "duration"
+    t.text     "commencement"
+    t.string   "averagefees"
+    t.string   "averagebatchstrength"
+    t.text     "descintroduction"
+    t.text     "desccurriculum"
+    t.text     "descfuturescope"
+    t.text     "descinfra"
+    t.text     "descnotableprofessors"
+    t.text     "descinternships"
+    t.text     "descplacements"
+    t.text     "admission"
   end
 
   create_table "institutehandlers", force: :cascade do |t|
