@@ -4,5 +4,5 @@ class Allowedvalueslevel < ActiveRecord::Base
 	validates :values, presence: true
 
 	#validation for no specialcharacters 
-	validates :values, format: { with: /\A[a-zA-Z]+\z/, message: "No special characters" }
+	#validates :values, format: { with: /\A[a-zA-Z]+\z/, message: "No special characters" }
 end

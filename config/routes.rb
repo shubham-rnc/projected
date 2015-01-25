@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :institutehandlers
+
+  resources :institutes
+
   resources :tests
 
   resources :allowedvalueslevels
@@ -11,7 +15,7 @@ Rails.application.routes.draw do
   post 'handlers/search' => 'handlers#search'
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'handlers#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

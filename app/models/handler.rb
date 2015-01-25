@@ -1,7 +1,11 @@
 class Handler < ActiveRecord::Base
+ #database relations
+  belongs_to :institutehandler
+
+
  #validates starts
  	#validation starts for presence
-	validates :institution, presence: true
+	validates :institutehandler_id, presence: true, numericality: {only_integer: true}
 	validates :level, presence: true
 	validates :course, presence: true
 	validates :activation, inclusion: {in: [true,false]}
@@ -24,7 +28,7 @@ class Handler < ActiveRecord::Base
 #field value auto pupulation
 
 	def save
-		item = institution+level+course+stream
+		item = institutehandler_id.to_s+level+course+stream
     	self.uniquenesscheck = item.delete(' ')
     	super   # calls the rails save function to store our object to the database
   	end
@@ -34,11 +38,10 @@ class Handler < ActiveRecord::Base
   		search_condition = "%" + search + "%"
   		resultsid = where("id like ?", "#{search}")
   		if resultsid.empty?
-  			resultsininsti = where("institution like ?", "%#{search}%")
   			resultsinstream = where("stream like ?", "%#{search}%")
   			resultsincourse = where("course like ?", "%#{search}%")
   			resultsinlevel = where("level like ?", "%#{search}%")
-  			result = resultsid+resultsininsti+resultsinstream+resultsincourse+resultsinlevel
+  			result = resultsid+resultsinstream+resultsincourse+resultsinlevel
 			searchresult = result.uniq
 		else
 			result = resultsid

@@ -12,11 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :institution %><br>
-    <%= f.text_field :institution %>
+    <%= f.label :instituteid %><br>
+    <%= f.text_field :institutehandler_id %>
   </div>
   <div class="field">
     <%= f.label :level %><br>
+
     <%= f.collection_select(:level, Allowedvalueslevel.all, :values, :values, prompt: true) %>
   </div>
   <div class="field">

@@ -1,0 +1,1 @@
+json.extract! @institutehandler, :id, :name, :affiliation, :Established, :affiliation, :type, :city, :state, :country, :address, :descintroduction, :descacademics, :descinfra, :desceaa, :descnotablesuccess, :descmotto, :desccampus, :latitute, :longitude, :accomodation, :website, :created_at, :updated_at

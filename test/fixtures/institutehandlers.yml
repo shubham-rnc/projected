@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  affiliation: MyString
+  Established: 1
+  affiliation: MyString
+  type: 
+  city: MyString
+  state: MyString
+  country: MyString
+  address: MyText
+  descintroduction: MyText
+  descacademics: MyText
+  descinfra: MyText
+  desceaa: MyText
+  descnotablesuccess: MyText
+  descmotto: MyString
+  desccampus: MyText
+  latitute: 9.99
+  longitude: 9.99
+  accomodation: MyString
+  website: MyString
+
+two:
+  name: MyString
+  affiliation: MyString
+  Established: 1
+  affiliation: MyString
+  type: 
+  city: MyString
+  state: MyString
+  country: MyString
+  address: MyText
+  descintroduction: MyText
+  descacademics: MyText
+  descinfra: MyText
+  desceaa: MyText
+  descnotablesuccess: MyText
+  descmotto: MyString
+  desccampus: MyText
+  latitute: 9.99
+  longitude: 9.99
+  accomodation: MyString
+  website: MyString

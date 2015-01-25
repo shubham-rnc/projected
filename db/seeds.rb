@@ -24,38 +24,27 @@ handlers = [
 ]
 
 handlers.each do |varinstitute, varlevel, varstream, varcourse, varactivation|
-	Handler.create(institution: varinstitute, level: varlevel, stream: varstream, course: varcourse, activation: varactivation)
+	Handler.create(level: varlevel, stream: varstream, course: varcourse, activation: varactivation, institutehandler_id: 1)
 end
 
 
 i = 0 
-
-10.times do 
-	Handler.create(institution: "Institute"+i.to_s, level: "UG", stream: "stream"+i.to_s, course: "course"+i.to_s, activation: TRUE)
+50.times do 
+	Handler.create(level: "UG", stream: "stream"+i.to_s, course: "course"+i.to_s, activation: TRUE, institutehandler_id: 1)
 	i = i+1
 end
 
-i=10
-10.times do 
-	Handler.create(institution: "Institute"+i.to_s, level: "PG", stream: "stream"+i.to_s, course: "course"+i.to_s, activation: TRUE)
+50.times do 
+	Handler.create(level: "PG", stream: "economics"+i.to_s, course: "course"+i.to_s, activation: TRUE, institutehandler_id: 1)
 	i = i+1
 end
 
-i=20
-10.times do 
-	Handler.create(institution: "Institute"+i.to_s, level: "Online Certification", stream: "stream"+i.to_s, course: "course"+i.to_s, activation: TRUE)
+50.times do 
+	Handler.create(level: "Online certification", stream: "computer science"+i.to_s, course: "course"+i.to_s, activation: TRUE, institutehandler_id: 1)
 	i = i+1
 end
 
-
-i=30
-10.times do 
-	Handler.create(institution: "Institute"+i.to_s, level: "Diploma", stream: "stream"+i.to_s, course: "course"+i.to_s, activation: TRUE)
-	i = i+1
-end
-
-i=40
-10.times do 
-	Handler.create(institution: "Institute"+i.to_s, level: "Diploma", stream: "stream"+i.to_s, course: "course"+i.to_s, activation: FALSE)
+50.times do 
+	Handler.create(level: "Online certification", stream: "computer science"+i.to_s, course: "course"+i.to_s, activation: FALSE, institutehandler_id: 1)
 	i = i+1
 end

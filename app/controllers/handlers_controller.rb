@@ -73,7 +73,7 @@ class HandlersController < ApplicationController
 
   private
   def handler_params
-    params.require(:handler).permit(:institution, :level, :course, :stream, :activation)
+    params.require(:handler).permit(:institutehandler_id, :level, :course, :stream, :activation)
   end
 
 

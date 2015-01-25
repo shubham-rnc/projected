@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106183352) do
+ActiveRecord::Schema.define(version: 20150125204920) do
 
   create_table "allowedvalueslevels", force: :cascade do |t|
     t.string   "values"
@@ -20,14 +20,44 @@ ActiveRecord::Schema.define(version: 20150106183352) do
   end
 
   create_table "handlers", force: :cascade do |t|
-    t.string   "institution"
     t.string   "level"
     t.string   "course"
     t.boolean  "activation"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "stream"
     t.string   "uniquenesscheck"
+    t.integer  "institutehandler_id"
+  end
+
+  create_table "institutehandlers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "affiliation"
+    t.integer  "Established"
+    t.string   "type"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.text     "address"
+    t.text     "descintroduction"
+    t.text     "descacademics"
+    t.text     "descinfra"
+    t.text     "desceaa"
+    t.text     "descnotablesuccess"
+    t.string   "descmotto"
+    t.text     "desccampus"
+    t.decimal  "latitute"
+    t.decimal  "longitude"
+    t.string   "accomodation"
+    t.string   "website"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "institutes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tests", force: :cascade do |t|

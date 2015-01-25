@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Institutehandlers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Affiliation</th>
+      <th>Established</th>
+      <th>Affiliation</th>
+      <th>Type</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Address</th>
+      <th>Descintroduction</th>
+      <th>Descacademics</th>
+      <th>Descinfra</th>
+      <th>Desceaa</th>
+      <th>Descnotablesuccess</th>
+      <th>Descmotto</th>
+      <th>Desccampus</th>
+      <th>Latitute</th>
+      <th>Longitude</th>
+      <th>Accomodation</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutehandlers.each do |institutehandler| %>
+      <tr>
+        <td><%= institutehandler.name %></td>
+        <td><%= institutehandler.affiliation %></td>
+        <td><%= institutehandler.Established %></td>
+        <td><%= institutehandler.affiliation %></td>
+        <td><%= institutehandler.type %></td>
+        <td><%= institutehandler.city %></td>
+        <td><%= institutehandler.state %></td>
+        <td><%= institutehandler.country %></td>
+        <td><%= institutehandler.address %></td>
+        <td><%= institutehandler.descintroduction %></td>
+        <td><%= institutehandler.descacademics %></td>
+        <td><%= institutehandler.descinfra %></td>
+        <td><%= institutehandler.desceaa %></td>
+        <td><%= institutehandler.descnotablesuccess %></td>
+        <td><%= institutehandler.descmotto %></td>
+        <td><%= institutehandler.desccampus %></td>
+        <td><%= institutehandler.latitute %></td>
+        <td><%= institutehandler.longitude %></td>
+        <td><%= institutehandler.accomodation %></td>
+        <td><%= institutehandler.website %></td>
+        <td><%= link_to 'Show', institutehandler %></td>
+        <td><%= link_to 'Edit', edit_institutehandler_path(institutehandler) %></td>
+        <td><%= link_to 'Destroy', institutehandler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Institutehandler', new_institutehandler_path %>

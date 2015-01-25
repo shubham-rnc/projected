@@ -1,0 +1,97 @@
+<%= form_for(@institutehandler) do |f| %>
+  <% if @institutehandler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@institutehandler.errors.count, "error") %> prohibited this institutehandler from being saved:</h2>
+
+      <ul>
+      <% @institutehandler.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :affiliation %><br>
+    <%= f.text_field :affiliation %>
+  </div>
+  <div class="field">
+    <%= f.label :Established %><br>
+    <%= f.number_field :Established %>
+  </div>
+  <div class="field">
+    <%= f.label :affiliation %><br>
+    <%= f.text_field :affiliation %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :descintroduction %><br>
+    <%= f.text_area :descintroduction %>
+  </div>
+  <div class="field">
+    <%= f.label :descacademics %><br>
+    <%= f.text_area :descacademics %>
+  </div>
+  <div class="field">
+    <%= f.label :descinfra %><br>
+    <%= f.text_area :descinfra %>
+  </div>
+  <div class="field">
+    <%= f.label :desceaa %><br>
+    <%= f.text_area :desceaa %>
+  </div>
+  <div class="field">
+    <%= f.label :descnotablesuccess %><br>
+    <%= f.text_area :descnotablesuccess %>
+  </div>
+  <div class="field">
+    <%= f.label :descmotto %><br>
+    <%= f.text_field :descmotto %>
+  </div>
+  <div class="field">
+    <%= f.label :desccampus %><br>
+    <%= f.text_area :desccampus %>
+  </div>
+  <div class="field">
+    <%= f.label :latitute %><br>
+    <%= f.text_field :latitute %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :accomodation %><br>
+    <%= f.text_field :accomodation %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
