@@ -16,6 +16,3 @@ class Coursedetails < ActiveRecord::Migration
   end
 end
 
-seed
-validations
-views
