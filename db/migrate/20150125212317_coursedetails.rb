@@ -15,3 +15,7 @@ class Coursedetails < ActiveRecord::Migration
   add_column(:handlers,:admission, :text)
   end
 end
+
+seed
+validations
+views
