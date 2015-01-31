@@ -5,7 +5,7 @@ class Handler < ActiveRecord::Base
 
  #validates starts
  	#validation starts for presence
-	validates :institutehandler_id, presence: true, numericality: {only_integer: true}
+	validates :institutehandler_id, presence: true
 	validates :level, presence: true
 	validates :course, presence: true
 	validates :activation, inclusion: {in: [true,false]}
@@ -33,7 +33,9 @@ class Handler < ActiveRecord::Base
 #field value auto pupulation
 
 	def save
-		item = institutehandler_id.to_s+level+course+stream
+		itemtemp1 = Institutehandler.find(institutehandler_id)
+		itemtemp = itemtemp1.name+level+course+stream
+		item = itemtemp.gsub(/[^0-9A-Za-z]/, '')
     	self.uniquenesscheck = item.delete(' ')
     	super   # calls the rails save function to store our object to the database
   	end

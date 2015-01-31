@@ -12,7 +12,7 @@ class Institutehandler < ActiveRecord::Base
 	validates :descintroduction, presence: true
 	validates :descacademics, presence: true
 	validates :website, presence: true
-	validates :intitutetype, presence: true
+	validates :institutetype, presence: true
 
 
 
