@@ -24,12 +24,8 @@
     <%= f.number_field :Established %>
   </div>
   <div class="field">
-    <%= f.label :affiliation %><br>
-    <%= f.text_field :affiliation %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :institutetype %><br>
+    <%= f.text_field :institutetype %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
@@ -85,7 +81,9 @@
   </div>
   <div class="field">
     <%= f.label :accomodation %><br>
-    <%= f.text_field :accomodation %>
+    Yes<%= radio_button("institutehandler", "accomodation", "yes") %><br/>
+    No
+    <%= radio_button("institutehandler", "accomodation", "no") %>
   </div>
   <div class="field">
     <%= f.label :website %><br>

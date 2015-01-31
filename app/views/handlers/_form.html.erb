@@ -12,26 +12,79 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :instituteid %><br>
+    <%= f.label :instituteid %>*<br>
     <%= f.text_field :institutehandler_id %>
   </div>
   <div class="field">
-    <%= f.label :level %><br>
+    <%= f.label :level %>*<br>
 
     <%= f.collection_select(:level, Allowedvalueslevel.all, :values, :values, prompt: true) %>
   </div>
   <div class="field">
-    <%= f.label :course %><br>
+    <%= f.label :course %>*<br>
     <%= f.text_field :course %>
   </div>
   <div class="field">
-    <%= f.label :stream %><br>
+    <%= f.label :stream %>*<br>
     <%= f.text_field :stream %>
   </div>
   <div class="field">
-    <%= f.label :activation %><br>
+    <%= f.label :activation %>*<br>
     <%= f.select :activation, options_for_select([TRUE, FALSE]) %>
   </div>
+  <div class="field">
+    <%= f.label :eligibility %>*<br>
+    <%= f.text_area :eligibility %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %>*<br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :commencement %>*<br>
+    <%= f.text_field :commencement %>
+  </div>
+  <div class="field">
+    <%= f.label :averagefees %><br>
+    <%= f.text_field :averagefees %>
+  </div>
+  <div class="field">
+    <%= f.label :averagebatchstrength %><br>
+    <%= f.text_field :averagebatchstrength %>
+  </div>
+  <div class="field">
+    <%= f.label :descintroduction %>*<br>
+    <%= f.text_area :descintroduction %>
+  </div>
+  <div class="field">
+    <%= f.label :desccurriculum %>*<br>
+    <%= f.text_area :desccurriculum %>
+  </div>
+  <div class="field">
+    <%= f.label :descfuturescope %><br>
+    <%= f.text_area :descfuturescope %>
+  </div>
+  <div class="field">
+    <%= f.label :descinfra %><br>
+    <%= f.text_area :descinfra %>
+  </div>
+  <div class="field">
+    <%= f.label :descnotableprofessors %><br>
+    <%= f.text_area :descnotableprofessors %>
+  </div>
+  <div class="field">
+    <%= f.label :descinternships %><br>
+    <%= f.text_area :descinternships %>
+  </div>
+  <div class="field">
+    <%= f.label :descplacements %><br>
+    <%= f.text_area :descplacements %>
+  </div>
+  <div class="field">
+    <%= f.label :admission %>*<br>
+    <%= f.text_area :admission %>
+  </div>
+
     <div class="actions">
     <%= f.submit %>
   </div>

@@ -10,7 +10,12 @@ class Handler < ActiveRecord::Base
 	validates :course, presence: true
 	validates :activation, inclusion: {in: [true,false]}
 	validates :stream, presence: true
-	
+	validates :eligibility, presence: true
+	validates :duration, presence: true
+	validates :commencement, presence: true
+	validates :descintroduction, presence: true
+	validates :admission, presence: true
+
 	#validation of uniqueness
 	validates :uniquenesscheck, uniqueness: true
 
@@ -19,7 +24,7 @@ class Handler < ActiveRecord::Base
    
 	#validation starts for allowed values
 	
-	allow = ["UG", "PG", "Online Certification", "Highschool", "Diploma"]
+	allow = ["Under Graduation", "Post Graduation", "Doctorate"]
 	validates :level, inclusion: {in: allow}
       
 

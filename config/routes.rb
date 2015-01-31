@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :institutehandlers
 
-  resources :institutes
+  
 
   resources :tests
 

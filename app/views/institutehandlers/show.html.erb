@@ -22,7 +22,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @institutehandler.type %>
+  <%= @institutehandler.institutetype %>
 </p>
 
 <p>
@@ -99,6 +99,8 @@
   <strong>Website:</strong>
   <%= @institutehandler.website %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_institutehandler_path(@institutehandler) %> |
 <%= link_to 'Back', institutehandlers_path %>

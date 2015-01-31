@@ -69,6 +69,6 @@ class InstitutehandlersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def institutehandler_params
-      params.require(:institutehandler).permit(:name, :affiliation, :Established, :affiliation, :type, :city, :state, :country, :address, :descintroduction, :descacademics, :descinfra, :desceaa, :descnotablesuccess, :descmotto, :desccampus, :latitute, :longitude, :accomodation, :website)
+      params.require(:institutehandler).permit(:name, :affiliation, :Established, :affiliation, :institutetype, :city, :state, :country, :address, :descintroduction, :descacademics, :descinfra, :desceaa, :descnotablesuccess, :descmotto, :desccampus, :latitute, :longitude, :accomodation, :website)
     end
 end

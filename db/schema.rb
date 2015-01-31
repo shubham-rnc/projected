@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125212317) do
+ActiveRecord::Schema.define(version: 20150131170848) do
 
   create_table "allowedvalueslevels", force: :cascade do |t|
     t.string   "values"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20150125212317) do
     t.string   "name"
     t.string   "affiliation"
     t.integer  "Established"
-    t.string   "type"
     t.string   "city"
     t.string   "state"
     t.string   "country"
@@ -65,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150125212317) do
     t.string   "website"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "institutetype"
   end
 
   create_table "institutes", force: :cascade do |t|
