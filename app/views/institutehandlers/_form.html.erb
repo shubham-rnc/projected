@@ -10,86 +10,83 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="panel panel-default">
+  <div class="panel-heading">Basic details</div>
+  <div class="panel-body">
+    <table style="width:960px">
+      <tr class="field">
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+        <td><%= f.label :affiliation %></td>
+        <td><%= f.text_field :affiliation %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :Established %></td>
+        <td><%= f.number_field :Established %></td>
+        <td><%= f.label :institutetype %></td>
+        <td><%= f.text_field :institutetype %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :city %></td>
+        <td><%= f.text_field :city %></td>
+        <td><%= f.label :state %></td>
+        <td><%= f.text_field :state %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :country %></td>
+        <td><%= f.text_field :country %></td>
+        <td><%= f.label :address %></td>
+        <td><%= f.text_area :address %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :accomodation %></td><td>
+        Yes<%= radio_button("institutehandler", "accomodation", "yes") %>
+        No
+        <%= radio_button("institutehandler", "accomodation", "no") %></td>
+        <td><%= f.label :latitute %></td>
+        <td><%= f.text_field :latitute %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :longitude %></td>
+        <td><%= f.text_field :longitude %></td>
+        <td><%= f.label :website %></td>
+        <td><%= f.text_field :website %></td>
+      </tr>
+    </table>
   </div>
-  <div class="field">
-    <%= f.label :affiliation %><br>
-    <%= f.text_field :affiliation %>
-  </div>
-  <div class="field">
-    <%= f.label :Established %><br>
-    <%= f.number_field :Established %>
-  </div>
-  <div class="field">
-    <%= f.label :institutetype %><br>
-    <%= f.text_field :institutetype %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :descintroduction %><br>
-    <%= f.text_area :descintroduction %>
-  </div>
-  <div class="field">
-    <%= f.label :descacademics %><br>
-    <%= f.text_area :descacademics %>
-  </div>
-  <div class="field">
-    <%= f.label :descinfra %><br>
-    <%= f.text_area :descinfra %>
-  </div>
-  <div class="field">
-    <%= f.label :desceaa %><br>
-    <%= f.text_area :desceaa %>
-  </div>
-  <div class="field">
-    <%= f.label :descnotablesuccess %><br>
-    <%= f.text_area :descnotablesuccess %>
-  </div>
-  <div class="field">
-    <%= f.label :descmotto %><br>
-    <%= f.text_field :descmotto %>
-  </div>
-  <div class="field">
-    <%= f.label :desccampus %><br>
-    <%= f.text_area :desccampus %>
-  </div>
-  <div class="field">
-    <%= f.label :latitute %><br>
-    <%= f.text_field :latitute %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="field">
-    <%= f.label :accomodation %><br>
-    Yes<%= radio_button("institutehandler", "accomodation", "yes") %><br/>
-    No
-    <%= radio_button("institutehandler", "accomodation", "no") %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <div class="actions">
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Description</div>
+  <div class="panel-body">
+    <table style="width:960px">
+      <tr class="field">
+        <td><%= f.label :descintroduction %></td>
+        <td><%= f.text_area :descintroduction %></td>
+        <td><%= f.label :descacademics %></td>
+        <td><%= f.text_area :descacademics %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :descinfra %></td>
+        <td><%= f.text_area :descinfra %></td>
+        <td><%= f.label :desceaa %></td>
+        <td><%= f.text_area :desceaa %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :descnotablesuccess %></td>
+        <td><%= f.text_area :descnotablesuccess %></td>
+        <td><%= f.label :descmotto %><br>
+        <td><%= f.text_field :descmotto %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :desccampus %><br>
+        <td><%= f.text_area :desccampus %></td>
+        <td></td>
+        <td></td>
+      </tr>
+     </table> 
+ </div>
+</div>
     <%= f.submit %>
-  </div>
+      
+    
 <% end %>

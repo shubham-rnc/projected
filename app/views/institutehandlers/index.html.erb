@@ -16,6 +16,7 @@
       <table class="table">
         <thead>
           <tr>
+            <th>Serial No.</th>
             <th>Institute Id</th>
             <th>Institute Name</th>
             <th>City</th>
@@ -23,10 +24,11 @@
             <th colspan="3"></th>
           </tr>
         </thead>
-
+        <% @slno = 1 %>
         <tbody>
           <% @institutehandlers.each do |institutehandler| %>
             <tr>
+              <td><%= @slno %><% @slno = @slno+1 %></td>
               <td><%= institutehandler.id %></td>
               <td><%= institutehandler.name %></td>
               <td><%= institutehandler.city %></td>
