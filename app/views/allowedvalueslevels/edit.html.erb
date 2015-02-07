@@ -1,4 +1,8 @@
-<h1>Editing Allowedvalueslevel</h1>
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
+<div class="page-header"><h2>Listing Allowedvalues for course level</h2> <%= link_to 'Add allowed values', new_allowedvalueslevel_path %></div>
 
 <%= render 'form' %>
 

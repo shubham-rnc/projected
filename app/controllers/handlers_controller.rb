@@ -1,5 +1,6 @@
 class HandlersController < ApplicationController
-	def index
+layout 'backend'
+  def index
 	@listings = Handler.all
     @active = 0
     @inactive = 0

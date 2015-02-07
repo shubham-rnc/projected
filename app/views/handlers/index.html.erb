@@ -1,51 +1,65 @@
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
 <p id="notice"><%= notice %></p>
-<p> <%= link_to 'New listing', new_handler_path %></p>
-<p> <%= link_to 'Institutions', institutehandlers_path %></p>
-<div id="search">
+
+
+<div class="page-header"><h2>Listing Institute based course</h2> <%= link_to 'Create New Course Listings', new_handler_path %></div>
+  <div id="search" >
     <%= render :partial => 'handlers/search' %>
   </div>
-<h1>Listings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Values</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="well well-small">
+  <ul class="list-group">
+    <li class="list-group-item">Total count of active listings: <%= @active %></li>
+    <li class="list-group-item">
+    Total count of inactive listings: <%= @inactive %>
+    </li>
+    <li class="list-group-item">
+    Total:<%= @active+@inactive %>
+    </li>
+  </ul>
+    
+</div>
 
-  <tbody>
-    <tr>
-        <th>Serial No.</th>
-        <th>Listings ID</th>
-        <th>Stream</th>
-        <th>Institution</th>
-        <th>Course</th>
-        <th>Level</th>
-        <th>Activation</th>
-        
-      </tr>
-      <% @slno = 1 %>
-    <% @listings.each do |listings| %>
-      
+<div class="panel panel-default">
+  <div class="panel-heading">List of all the Institutions based courses</div>
+  <div class="panel-body">
+  <table class="table">
+    <thead>
+    </thead>
+
+    <tbody>
       <tr>
-        <td><%= @slno %><% @slno = @slno+1 %></td>
-        <td><%= listings.id %></td>
-        <td><%= listings.stream %></td>
-        <td><%= listings.institutehandler.name %></td>
-        <td><%= listings.course %></td>
-        <td><%= listings.level %></td>
-        <td><%= listings.activation %></td>
-       <td><%= link_to 'Show', handler_path(listings) %></td>
-        <td><%= link_to 'Edit', edit_handler_path(listings) %></td>
-        <td><%= link_to 'Destroy', handler_path(listings), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <b>Total count of active listings: <%= @active %></b></br>
-    <b>Total count of inactive listings: <%= @inactive %></b></br>
-    <b>Total: <%= @active+@inactive %> 
-  </tbody>
-</table>
-<br>
+          <th>Serial No.</th>
+          <th>Listings ID</th>
+          <th>Stream</th>
+          <th>Institution</th>
+          <th>Course</th>
+          <th>Level</th>
+          <th>Activation</th>
+          
+        </tr>
+        <% @slno = 1 %>
+      <% @listings.each do |listings| %>
+        
+        <tr>
+          <td><%= @slno %><% @slno = @slno+1 %></td>
+          <td><%= listings.id %></td>
+          <td><%= listings.stream %></td>
+          <td><%= listings.institutehandler.name %></td>
+          <td><%= listings.course %></td>
+          <td><%= listings.level %></td>
+          <td><%= listings.activation %></td>
+         <td><%= link_to 'Show', handler_path(listings) %> ||
+          <%= link_to 'Edit', edit_handler_path(listings) %> ||
+          <%= link_to 'Destroy', handler_path(listings), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+     </tbody>
+  </table>
+  </div>
+</div>
 
 

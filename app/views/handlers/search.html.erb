@@ -1,21 +1,33 @@
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
 <p id="notice"><%= notice %></p>
-<p> <%= link_to 'New listing', new_handler_path %>
-</p>
-<h1>Listings</h1>
+
+
+<div class="page-header"><h2>Listing Institute based course </h2> <%= link_to 'Create New Course Listings', new_handler_path %></div>
+<div id="search">
+    <%= render :partial => 'handlers/search' %>
+  </div>
 <% if @items.empty? %>
 <p> No search results </p>
 <% else %>
-  <table>
-    <thead>
-      <tr>
-        <th>Values</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
 
-
-
-    <tbody>
+<div class="well well-small">
+  <ul class="list-group">
+    <li class="list-group-item">Total count of active listings: <%= @active %></li>
+    <li class="list-group-item">
+    Total count of inactive listings: <%= @inactive %>
+    </li>
+    <li class="list-group-item">
+    Total:<%= @active+@inactive %>
+    </li>
+  </ul>
+</div>
+<div class="panel-heading">Search results</div>
+<table class="table">
+      <tbody>
       <tr>
           <th>Serial No.</th>
           <th>Listings ID</th>
@@ -37,14 +49,11 @@
           <td><%= items.course %></td>
           <td><%= items.level %></td>
           <td><%= items.activation %></td>
-         <td><%= link_to 'Show', handler_path(items) %></td>
-          <td><%= link_to 'Edit', edit_handler_path(items) %></td>
-          <td><%= link_to 'Destroy', handler_path(items), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to 'Show', handler_path(items) %>||
+          <%= link_to 'Edit', edit_handler_path(items) %>||
+          <%= link_to 'Destroy', handler_path(items), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
-          <b>Total count of active listings: <%= @active %></b></br>
-    <b>Total count of inactive listings: <%= @inactive %></b></br>
-    <b>Total: <%= @active+@inactive %>
     </tbody>
   </table>
   <br>

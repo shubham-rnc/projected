@@ -1,93 +1,112 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Institution:</strong>
-  <p> <%= link_to @handler.institutehandler.name, institutehandler_path(:id => @handler.institutehandler.id) %></p>
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
+<p id="notice"><%= notice %></tr>
+<div class="page-header">
+<h2>Listing Institute based course </h2><%= link_to 'Create New Course Listings', new_handler_path %>
+</div>
+<div id="search" >
+    <%= render :partial => 'handlers/search' %>
+</div>
+
+<table class="table" style="width:960px">
+  <tr>
+    <th style="width:100px">Attribute</th>  
+    <th>Value</th>
+  </tr>
+
+
+  <tr>
+  <td>Institution:</td>
+  <td><%= link_to @handler.institutehandler.name, institutehandler_path(:id => @handler.institutehandler.id) %></td>
   <%=  %>
-</p>
+  </tr>
 
-<p>
-  <strong>Stream:</strong>
-  <%= @handler.stream %>
-</p>
+  <tr>
+  <td>Stream:</td>
+  <td><%= @handler.stream %></td>
+  </tr>
 
 
-<p>
-  <strong>Level:</strong>
-  <%= @handler.level %>
-</p>
+  <tr>
+    <td>Level:</td>
+    <td><%= @handler.level %></td>
+  </tr>
 
-<p>
-  <strong>Course:</strong>
-  <%= @handler.course %>
-</p>
+  <tr>
+    <td>Course:</td>
+    <td><%= @handler.course %></td>
+  </tr>
 
-<p>
-  <strong>Activated?:</strong>
-  <%= @handler.activation %>
-</p>
+  <tr>
+    <td>Activated?:</td>
+    <td><%= @handler.activation %></td>
+  </tr>
 
-<p>
-  <strong>Eligibility:</strong>
-  <%= @handler.eligibility %>
-</p>
+  <tr>
+    <td>Eligibility:</td>
+    <td><%= @handler.eligibility %></td>
+  </tr>
 
-<p>
-  <strong>duration:</strong>
-  <%= @handler.duration %>
-</p>
+  <tr>
+    <td>duration:</td>
+    <td><%= @handler.duration %></td>
+  </tr>
 
-<p>
-  <strong>commencement:</strong>
-  <%= @handler.commencement %>
-</p>
+  <tr>
+    <td>commencement:</td>
+    <td><%= @handler.commencement %></td>
+  </tr>
 
-<p>
-  <strong>averagefees:</strong>
-  <%= @handler.averagefees %>
-</p>
+  <tr>
+    <td>averagefees:</td>
+    <td><%= @handler.averagefees %></td>
+  </tr>
 
-<p>
-  <strong>averagebatchstrength:</strong>
-  <%= @handler.averagebatchstrength %>
-</p>
+  <tr>
+    <td>averagebatchstrength:</td>
+    <td><%= @handler.averagebatchstrength %></td>
+  </tr>
 
-<p>
-  <strong>descintroduction:</strong>
-  <%= @handler.descintroduction %>
-</p>
+  <tr>
+    <td>descintroduction:</td>
+    <td><%= @handler.descintroduction %></td>
+  </tr>
 
-<p>
-  <strong>desccurriculum:</strong>
-  <%= @handler.desccurriculum %>
-</p>
+  <tr>
+    <td>desccurriculum:</td>
+    <td><%= @handler.desccurriculum %></td>
+  </tr>
 
-<p>
-  <strong>descfuturescope:</strong>
-  <%= @handler.descfuturescope %>
-</p>
+  <tr>
+    <td>descfuturescope:</td>
+    <td><%= @handler.descfuturescope %></td>
+  </tr>
 
-<p>
-  <strong>descinfra:</strong>
-  <%= @handler.descinfra %>
-</p>
-<p>
-  <strong>descnotableprofessors:</strong>
-  <%= @handler.descnotableprofessors %>
-</p>
-<p>
-  <strong>descinternships:</strong>
-  <%= @handler.descinternships %>
-</p>
-<p>
-  <strong>descplacements:</strong>
-  <%= @handler.descplacements %>
-</p>
-<p>
-  <strong>admission:</strong>
-  <%= @handler.admission %>
-</p>
+  <tr>
+    <td>descinfra:</td>
+    <td><%= @handler.descinfra %></td>
+  </tr>
+  <tr>
+    <td>descnotableprofessors:</td>
+    <td><%= @handler.descnotableprofessors %></td>
+  </tr>
+  <tr>
+    <td>descinternships:</td>
+    <td><%= @handler.descinternships %></td>
+  </tr>
+  <tr>
+    <td>descplacements:</td>
+    <td><%= @handler.descplacements %></td>
+  </tr>
+  <tr>
+    <td>admission:</td>
+    <td><%= @handler.admission %></td>
+  </tr>
 
+</table>
 
 <%= link_to 'Edit', edit_handler_path(@handler) %> |
 <%= link_to 'Back', handlers_path %>

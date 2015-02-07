@@ -1,8 +1,12 @@
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
 <p id="notice"><%= notice %></p>
+<div class="page-header"><h2>Listing Allowedvalues for course level</h2> <%= link_to 'Add allowed values', new_allowedvalueslevel_path %></div>
 
-<h1>Listing Allowedvalueslevels</h1>
 
-<table>
+<table class="table" style="width:300px">
   <thead>
     <tr>
       <th>Values</th>
@@ -14,9 +18,9 @@
     <% @allowedvalueslevels.each do |allowedvalueslevel| %>
       <tr>
         <td><%= allowedvalueslevel.values %></td>
-        <td><%= link_to 'Show', allowedvalueslevel %></td>
-        <td><%= link_to 'Edit', edit_allowedvalueslevel_path(allowedvalueslevel) %></td>
-        <td><%= link_to 'Destroy', allowedvalueslevel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', allowedvalueslevel %>
+       ||<%= link_to 'Edit', edit_allowedvalueslevel_path(allowedvalueslevel) %>||
+       <%= link_to 'Destroy', allowedvalueslevel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,22 +28,8 @@
 
 <br>
 
-<%= link_to 'New Allowedvalueslevel', new_allowedvalueslevel_path %>
-
-
-<p id="demo">asdsa</p>
-</br>
-<button type="button" onClick="myFunction()">Try it</button>
-
-<script>
 
 
 
-function myFunction(){
-var a = 1;
-var b = 6;
-var c = a + b;
-document.getElementById("demo").innerHTML = c;
-}
 
 </script>

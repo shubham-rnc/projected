@@ -1,5 +1,12 @@
-<h1>Editing Listings</h1>
 
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" class="active"><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
+<div class="page-header"><h2>Listing Institute based course </h2><%= link_to 'Create New Course Listings', new_handler_path %></div>
+<div id="search" >
+    <%= render :partial => 'handlers/search' %>
+  </div>
 <%= render 'form' %>
 
 <%= link_to 'Show', @handler %> |

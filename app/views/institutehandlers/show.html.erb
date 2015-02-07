@@ -1,106 +1,117 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" ><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
+<div class="page-header"><h2>Listing Institute</h2><%= link_to 'Create New Institute', new_institutehandler_path %></div>
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @institutehandler.name %>
-</p>
+<table class="table" style="width:960px">
+  <tr>
+    <th style="width:100px">Attribute</th>  
+    <th>Value</th>
+  </tr>
 
-<p>
-  <strong>Affiliation:</strong>
-  <%= @institutehandler.affiliation %>
-</p>
+  <tr>
+  <td>Name:</td>
+  <td><%= @institutehandler.name %></td>
+  </tr>
 
-<p>
-  <strong>Established:</strong>
-  <%= @institutehandler.Established %>
-</p>
+  <tr>
+  <td>Affiliation:</td>
+  <td><%= @institutehandler.affiliation %></td>
+  </tr>
 
-<p>
-  <strong>Affiliation:</strong>
-  <%= @institutehandler.affiliation %>
-</p>
+  <tr>
+  <td>Established:</td>
+  <td><%= @institutehandler.Established %></td>
+  </tr>
 
-<p>
-  <strong>Type:</strong>
-  <%= @institutehandler.institutetype %>
-</p>
+  <tr>
+  <td>Affiliation:</td>
+  <td><%= @institutehandler.affiliation %></td>
+  </tr>
 
-<p>
-  <strong>City:</strong>
-  <%= @institutehandler.city %>
-</p>
+  <tr>
+  <td>Type:</td>
+  <td><%= @institutehandler.institutetype %></td>
+  </tr>
 
-<p>
-  <strong>State:</strong>
-  <%= @institutehandler.state %>
-</p>
+  <tr>
+  <td>City:</td>
+  <td><%= @institutehandler.city %></td>
+  </tr>
 
-<p>
-  <strong>Country:</strong>
-  <%= @institutehandler.country %>
-</p>
+  <tr>
+  <td>State:</td>
+  <td><%= @institutehandler.state %></td>
+  </tr>
 
-<p>
-  <strong>Address:</strong>
-  <%= @institutehandler.address %>
-</p>
+  <tr>
+  <td>Country:</td>
+  <td><%= @institutehandler.country %></td>
+  </tr>
 
-<p>
-  <strong>Descintroduction:</strong>
-  <%= @institutehandler.descintroduction %>
-</p>
+  <tr>
+  <td>Address:</td>
+  <td><%= @institutehandler.address %></td>
+  </tr>
 
-<p>
-  <strong>Descacademics:</strong>
-  <%= @institutehandler.descacademics %>
-</p>
+  <tr>
+  <td>Descintroduction:</td>
+  <td><%= @institutehandler.descintroduction %></td>
+  </tr>
 
-<p>
-  <strong>Descinfra:</strong>
-  <%= @institutehandler.descinfra %>
-</p>
+  <tr>
+  <td>Descacademics:</td>
+  <td><%= @institutehandler.descacademics %></td>
+  </tr>
 
-<p>
-  <strong>Desceaa:</strong>
-  <%= @institutehandler.desceaa %>
-</p>
+  <tr>
+  <td>Descinfra:</td>
+  <td><%= @institutehandler.descinfra %></td>
+  </tr>
 
-<p>
-  <strong>Descnotablesuccess:</strong>
-  <%= @institutehandler.descnotablesuccess %>
-</p>
+  <tr>
+  <td>Desceaa:</td>
+  <td><%= @institutehandler.desceaa %></td>
+  </tr>
 
-<p>
-  <strong>Descmotto:</strong>
-  <%= @institutehandler.descmotto %>
-</p>
+  <tr>
+  <td>Descnotablesuccess:</td>
+  <td><%= @institutehandler.descnotablesuccess %></td>
+  </tr>
 
-<p>
-  <strong>Desccampus:</strong>
-  <%= @institutehandler.desccampus %>
-</p>
+  <tr>
+  <td>Descmotto:</td>
+  <td><%= @institutehandler.descmotto %></td>
+  </tr>
 
-<p>
-  <strong>Latitute:</strong>
-  <%= @institutehandler.latitute %>
-</p>
+  <tr>
+  <td>Desccampus:</td>
+  <td><%= @institutehandler.desccampus %></td>
+  </tr>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @institutehandler.longitude %>
-</p>
+  <tr>
+  <td>Latitute:</td>
+  <td><%= @institutehandler.latitute %></td>
+  </tr>
 
-<p>
-  <strong>Accomodation:</strong>
-  <%= @institutehandler.accomodation %>
-</p>
+  <tr>
+  <td>Longitude:</td>
+  <td><%= @institutehandler.longitude %></td>
+  </tr>
 
-<p>
-  <strong>Website:</strong>
-  <%= @institutehandler.website %>
-</p>
+  <tr>
+  <td>Accomodation:</td>
+  <td><%= @institutehandler.accomodation %></td>
+  </tr>
 
+  <tr>
+  <td>Website:</td>
+  <td><%= @institutehandler.website %></td>
+  </tr>
 
+</table>
 
 <%= link_to 'Edit', edit_institutehandler_path(@institutehandler) %> |
 <%= link_to 'Back', institutehandlers_path %>

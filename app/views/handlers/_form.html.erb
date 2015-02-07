@@ -19,6 +19,7 @@
     <%= f.label :level %>*<br>
 
     <%= f.collection_select(:level, Allowedvalueslevel.all, :values, :values, prompt: true) %>
+    <%= link_to 'Create new course level', allowedvalueslevels_path %>
   </div>
   <div class="field">
     <%= f.label :course %>*<br>

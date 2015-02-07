@@ -1,5 +1,8 @@
-<h1>New Institutehandler</h1>
-
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><%= link_to 'Institutions', institutehandlers_path %></li>
+  <li role="presentation" ><%= link_to 'Institution based listings', handlers_path %></li>
+</ul>
+<div class="page-header"><h2>Listing Institute</h2>Create New Institute</div>
 <%= render 'form' %>
 
 <%= link_to 'Back', institutehandlers_path %>

@@ -1,4 +1,5 @@
 class AllowedvalueslevelsController < ApplicationController
+  layout 'backend'
   before_action :set_allowedvalueslevel, only: [:show, :edit, :update, :destroy]
 
   # GET /allowedvalueslevels

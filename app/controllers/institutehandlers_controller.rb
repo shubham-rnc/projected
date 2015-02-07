@@ -1,4 +1,5 @@
 class InstitutehandlersController < ApplicationController
+  layout 'backend'
   before_action :set_institutehandler, only: [:show, :edit, :update, :destroy]
 
   # GET /institutehandlers
