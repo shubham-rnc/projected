@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :institutehandlers
-
+ 
   
-
+  resources :users
   resources :tests
 
   resources :allowedvalueslevels
