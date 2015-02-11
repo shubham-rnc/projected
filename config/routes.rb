@@ -1,21 +1,23 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :institutehandlers
- 
-  
   resources :users
   resources :tests
-
   resources :allowedvalueslevels
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
 
   resources :handlers
 
   post 'handlers/search' => 'handlers#search'
   get 'coursepage/:slug' => 'coursepage#show'
   # You can have the root of your site routed with "root"
-  root 'handlers#index'
+  root 'homepage#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -65,4 +67,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '*path' => redirect("/")
+  post '*path' => redirect("/")
 end

@@ -33,7 +33,7 @@ layout 'backend'
         		format.json { render json: @handler.errors, status: :unprocessable_entity }
       		end
     	end
-  	end
+  end
 
   def edit
     @handler = Handler.find(params[:id])
