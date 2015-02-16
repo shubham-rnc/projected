@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/index' => 'home#index'
+
   resources :institutehandlers
 
   
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
   post 'handlers/search' => 'handlers#search'
   get 'coursepage/:slug' => 'coursepage#show'
   # You can have the root of your site routed with "root"
-  root 'handlers#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
