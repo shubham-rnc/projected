@@ -1,6 +1,7 @@
 class Handler < ActiveRecord::Base
  #database relations
   belongs_to :institutehandler
+  has_many :textreviews
 
 
  #validates starts

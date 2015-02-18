@@ -1,0 +1,35 @@
+<%= form_for(@textreview) do |f| %>
+  <% if @textreview.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@textreview.errors.count, "error") %> prohibited this textreview from being saved:</h2>
+
+      <ul>
+      <% @textreview.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+     About course curriculum and institution?
+     <br/>
+     <%= f.text_area :body, placeholder: "Covers course curriculum structure, faculty quality, facilities, or anything which makes it great." %>
+  </div>
+   <div class="field">
+    What about after? 
+    <br/>
+    <%= f.text_area :futurescope, placeholder: "What kind of career path does an alumnus of this course see." %>
+  </div>
+   <div class="field">
+    <%= f.label :notablealumnies %><br>
+    <%= f.text_area :notablealumnies,laceholder: "If you know someone who has done great with his life, do let us and others know"%>
+  </div>
+   <div class="field">
+    <%= f.label :bottomline %><br>
+    <%= f.select(:bottomline, ["I would recommend studying this course to interested aspirants", "I don't recommend studying this course","I can't decide, there seems no bottomline"])  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

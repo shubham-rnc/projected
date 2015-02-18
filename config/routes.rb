@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :textreviews
+
+
   devise_for :users
   get 'home/index' => 'home#index'
 

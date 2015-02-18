@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Textreviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @textreviews.each do |textreview| %>
+      <tr>
+        <td><%= textreview.body %></td>
+        <td><%= link_to 'Show', textreview %></td>
+        <td><%= link_to 'Edit', edit_textreview_path(textreview) %></td>
+        <td><%= link_to 'Destroy', textreview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Textreview', new_textreview_path %>
