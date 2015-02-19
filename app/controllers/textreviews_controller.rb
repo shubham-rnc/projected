@@ -25,7 +25,7 @@ class TextreviewsController < ApplicationController
   # POST /textreviews.json
   def create
     @textreview = Textreview.new(textreview_params)
-
+    @textreview.user_id = current_user.id
     respond_to do |format|
       if @textreview.save
         format.html { redirect_to @textreview, notice: 'Textreview was successfully created.' }
@@ -69,6 +69,6 @@ class TextreviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def textreview_params
-      params.require(:textreview).permit(:body, :futurescope, :bottomline, :notablealumnies)
+      params.require(:textreview).permit(:body, :futurescope, :bottomline, :notablealumnies, :handler_id)
     end
 end
