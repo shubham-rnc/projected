@@ -29,10 +29,10 @@ class TextreviewsController < ApplicationController
     respond_to do |format|
       if @textreview.save
         format.html { redirect_to @textreview, notice: 'Textreview was successfully created.' }
-        format.json { render :show, status: :created, location: @textreview }
+        format.js { }
       else
         format.html { render :new }
-        format.json { render json: @textreview.errors, status: :unprocessable_entity }
+        format.js { }
       end
     end
   end
@@ -43,10 +43,10 @@ class TextreviewsController < ApplicationController
     respond_to do |format|
       if @textreview.update(textreview_params)
         format.html { redirect_to @textreview, notice: 'Textreview was successfully updated.' }
-        format.json { render :show, status: :ok, location: @textreview }
+        format.js { }
       else
         format.html { render :edit }
-        format.json { render json: @textreview.errors, status: :unprocessable_entity }
+        format.js { }
       end
     end
   end

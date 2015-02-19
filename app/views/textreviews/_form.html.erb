@@ -1,5 +1,4 @@
-<%= form_for(@textreview) do |f| %>
-  <% if @textreview.errors.any? %>
+<% if @textreview.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@textreview.errors.count, "error") %> prohibited this textreview from being saved:</h2>
 
@@ -10,7 +9,10 @@
       </ul>
     </div>
   <% end %>
-
+<% doajax = false unless (defined? doajax) %>
+<%= form_for(@textreview, remote: true) do |f| %>
+  
+ <%=f.hidden_field :handler_id, :value => @handler.id %>
   <div class="field">
      About course curriculum and institution?
      <br/>

@@ -6563,4 +6563,7 @@ button.close {
     display: none !important;
   }
 }
+div.remoteform {
+  background-color: #eee
+}
 /*# sourceMappingURL=bootstrap.css.map */
