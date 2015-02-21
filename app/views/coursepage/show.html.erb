@@ -80,3 +80,14 @@
 <h2> add review </h2>
 <%= render partial: 'textreviews/form', locals: {doajax: true} %>
 </div>
+
+<% @handler.textreviews.each do |textreview| %>
+  <%= textreview.body %>
+  </br>
+  <%= textreview.futurescope %>
+  </br>
+  <%= textreview.notablealumnies %>
+  </br>
+  <%= textreview.bottomline %>
+<%end%>
+  

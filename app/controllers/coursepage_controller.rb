@@ -3,6 +3,7 @@ class CoursepageController < ApplicationController
 		@handler = Handler.find_by(uniquenesscheck: params[:slug])
 		@textreview = Textreview.new
 		@textreview.handler = @handler
+		
 	end
 
 
