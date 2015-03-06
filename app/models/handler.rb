@@ -1,7 +1,7 @@
 class Handler < ActiveRecord::Base
  #database relations
   belongs_to :institutehandler
-  
+  has_many :textreviews
 
 
  #validates starts
@@ -11,11 +11,11 @@ class Handler < ActiveRecord::Base
 	validates :course, presence: true
 	validates :activation, inclusion: {in: [true,false]}
 	validates :stream, presence: true
-	validates :eligibility, presence: true
+	#validates :eligibility, presence: true
 	validates :duration, presence: true
-	validates :commencement, presence: true
-	validates :descintroduction, presence: true
-	validates :admission, presence: true
+	#validates :commencement, presence: true
+	#validates :descintroduction, presence: true
+	#validates :admission, presence: true
 
 	#validation of uniqueness
 	validates :uniquenesscheck, uniqueness: true

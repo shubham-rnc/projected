@@ -1,7 +1,7 @@
 class Institutehandler < ActiveRecord::Base
 #database relations
 	has_many :handlers
-	has_many :textreviews
+	has_many :coursereviews
 
 #validations
 	validates :name, presence: true, uniqueness: true

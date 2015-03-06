@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306070942) do
+ActiveRecord::Schema.define(version: 20150306121853) do
 
   create_table "allowedvalueslevels", force: :cascade do |t|
     t.string   "values"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "coursereviews", force: :cascade do |t|
+    t.text     "body"
+    t.text     "alumni"
+    t.string   "coursename"
+    t.integer  "user_id"
+    t.string   "institutehandler_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "handlers", force: :cascade do |t|

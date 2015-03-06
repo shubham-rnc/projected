@@ -4,15 +4,40 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong> <%= @institute.name %></strong>
- 
-</p>
+  <strong> <%= @institute.id %></strong>
+ </p>
+
+ <a class="btn modal-trigger" href="#modal1">Write review</a>
+
+ <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of texdasdsadasssssssssss adssssssssssst</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Agree</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="remoteform">
 <h2> add review </h2>
-<%= render partial: 'textreviews/form', locals: {doajax: true} %>
+<%= render partial: 'coursereviews/form', locals: {doajax: true} %>
 </div>
-
-
   
 
-  
+ <% @institute.coursereviews.each do |review| %>
+  <b><%= review.user.email %></b> says </br>
+  <%= review.body %>
+  </br>
+<%end%>
