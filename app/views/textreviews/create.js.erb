@@ -1,0 +1,5 @@
+<% if @textreview.errors.any? %>
+    $('<div id="error_explanation">please correct the following </div>').insertBefore('div.remoteform');
+  <% else %>
+  	$('<div id="error_explanation">Success </div>').insertBefore('div.remoteform');
+  <%end%>

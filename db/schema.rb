@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219165102) do
+ActiveRecord::Schema.define(version: 20150306070942) do
 
   create_table "allowedvalueslevels", force: :cascade do |t|
     t.string   "values"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150219165102) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "institutetype"
+    t.string   "slug"
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -88,13 +89,12 @@ ActiveRecord::Schema.define(version: 20150219165102) do
 
   create_table "textreviews", force: :cascade do |t|
     t.text     "body"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.text     "futurescope"
-    t.string   "bottomline"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.text     "notablealumnies"
-    t.integer  "handler_id"
     t.integer  "user_id"
+    t.integer  "institutehandler_id"
+    t.string   "coursename"
   end
 
   create_table "users", force: :cascade do |t|

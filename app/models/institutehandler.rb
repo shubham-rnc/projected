@@ -1,6 +1,7 @@
 class Institutehandler < ActiveRecord::Base
 #database relations
 	has_many :handlers
+	has_many :textreviews
 
 #validations
 	validates :name, presence: true, uniqueness: true
@@ -13,7 +14,10 @@ class Institutehandler < ActiveRecord::Base
 	validates :descacademics, presence: true
 	validates :website, presence: true
 	validates :institutetype, presence: true
+    validates :slug, uniqueness: true
 
-
-
+	def save
+    	self.slug = name.delete(' ')
+    	super   # calls the rails save function to store our object to the database
+  	end
 end

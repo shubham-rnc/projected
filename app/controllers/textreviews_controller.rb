@@ -28,10 +28,8 @@ class TextreviewsController < ApplicationController
     @textreview.user_id = current_user.id
     respond_to do |format|
       if @textreview.save
-        format.html { redirect_to @textreview, notice: 'Textreview was successfully created.' }
         format.js { }
       else
-        format.html { render :new }
         format.js { }
       end
     end
@@ -69,6 +67,6 @@ class TextreviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def textreview_params
-      params.require(:textreview).permit(:body, :futurescope, :bottomline, :notablealumnies, :handler_id)
+      params.require(:textreview).permit(:body, :notablealumnies, :institutehandler_id)
     end
 end
