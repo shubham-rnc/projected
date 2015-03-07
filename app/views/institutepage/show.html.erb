@@ -1,23 +1,37 @@
+<p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong> <%= @institute.id %></strong>
- </p>
-
- <a class="btn modal-trigger" href="#modal1">Write review</a>
-
- <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of texdasdsadasssssssssss adssssssssssst</p>
+<div class="row" >
+    <div class="col s2" >
+      
+        logo
+    
     </div>
-    <div class="modal-footer">
-      <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Agree</a>
-    </div>
-  </div>
+    <div class="col s10" >
+        
+         
+        <h5><span style="border-bottom:2px solid #b71c1c"><%= @institute.name %></span></h5>
+        <p><%= @institute.city %>, <%= @institute.state %> <% if @institute.institutetype %> | <% end %> <%= @institute.institutetype %> </p>
+        
+        <h6><span style="border-bottom:2px solid #b71c1c">About</span>  </h6> 
+        <p align="justify"><%= @institute.descintroduction %><a href="#">Know more...</a></p>  
+
+        <h6><span style="border-bottom:2px solid #b71c1c">Courses</span>  </h6> 
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"></i>First</div>
+              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            <li>
+              <div class="collapsible-header"></i>Second</div>
+              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            <li>
+              <div class="collapsible-header"></i>Third</div>
+              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+          </ul>
+        
 
 
 
@@ -30,14 +44,21 @@
 
 
 
-<div class="remoteform">
-<h2> add review </h2>
-<%= render partial: 'coursereviews/form', locals: {doajax: true} %>
-</div>
+
+            <div class="remoteform">
+            <h2> add review </h2>
+            <%= render partial: 'coursereviews/form', locals: {doajax: true} %>
+            </div>
   
 
- <% @institute.coursereviews.each do |review| %>
-  <b><%= review.user.email %></b> says </br>
-  <%= review.body %>
-  </br>
-<%end%>
+             <% @institute.coursereviews.each do |review| %>
+              <b><%= review.user.email %></b> says </br>
+              <%= review.body %>
+              </br>
+            <%end%>
+
+
+
+
+    </div>
+</div> 
