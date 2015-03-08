@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @coursereview.body %>
+</p>
+
+<p>
+  <strong>Alumni:</strong>
+  <%= @coursereview.alumni %>
+</p>
+
+<p>
+  <strong>Coursename:</strong>
+  <%= @coursereview.coursename %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @coursereview.user_id %>
+</p>
+
+<p>
+  <strong>Institutehandler:</strong>
+  <%= @coursereview.institutehandler_id %>
+</p>
+
+<%= link_to 'Edit', edit_coursereview_path(@coursereview) %> |
+<%= link_to 'Back', coursereviews_path %>

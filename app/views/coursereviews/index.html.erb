@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Coursereviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Alumni</th>
+      <th>Coursename</th>
+      <th>User</th>
+      <th>Institutehandler</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coursereviews.each do |coursereview| %>
+      <tr>
+        <td><%= coursereview.body %></td>
+        <td><%= coursereview.alumni %></td>
+        <td><%= coursereview.coursename %></td>
+        <td><%= coursereview.user_id %></td>
+        <td><%= coursereview.institutehandler_id %></td>
+        <td><%= link_to 'Show', coursereview %></td>
+        <td><%= link_to 'Edit', edit_coursereview_path(coursereview) %></td>
+        <td><%= link_to 'Destroy', coursereview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coursereview', new_coursereview_path %>
