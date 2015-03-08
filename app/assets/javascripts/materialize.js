@@ -526,8 +526,8 @@ jQuery.extend( jQuery.easing,
 
       var defaults = {
         opacity: 0.5,
-        in_duration: 300,
-        out_duration: 200,
+        in_duration: 10,
+        out_duration: 10,
         ready: undefined,
         complete: undefined,
         dismissible: true

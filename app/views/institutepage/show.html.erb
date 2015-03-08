@@ -10,31 +10,25 @@
     <div class="col s10" >
         
          
-        <h5><span style="border-bottom:2px solid #b71c1c"><%= @institute.name %></span></h5>
+        <h5><b><span style="border-bottom:2px solid #b71c1c"><%= @institute.name %></span></b></h5>
         <p><%= @institute.city %>, <%= @institute.state %> <% if @institute.institutetype %> | <% end %> <%= @institute.institutetype %> </p>
         
-        <h6><span style="border-bottom:2px solid #b71c1c">About</span>  </h6> 
-        <p align="justify"><%= @institute.descintroduction %><a href="#">Know more...</a></p>  
+        <h6><span style="border-bottom:2px solid #b71c1c"><b>About</b></span>  </h6> 
+        <p align="justify" class="hide-on-small-only"><%= @institute.descintroduction %><a href="#">Know more...</a></p>  
 
-        <h6><span style="border-bottom:2px solid #b71c1c">Courses</span>  </h6> 
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header"></i>First</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"></i>Second</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"></i>Third</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-          </ul>
-        
+        <a class="btn " onClick="$('#courselist').openModal();">Courses offered</a>
+          
 
 
-
+          <div id="courselist" class="modal">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Agree</a>
+              </div>
+            </div>
 
 
 

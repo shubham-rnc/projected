@@ -5668,15 +5668,14 @@ ul.tabs li.tab {
 
 .btn, .btn-large, .btn-flat {
   display: inline-block;
-  height: 36px;
+  height: 30px;
   margin-bottom: 15px;
-  padding: 0 2rem;
+  padding: 0 1rem;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   background-clip: padding-box;
-  line-height: 36px;
-  text-transform: uppercase;
+  line-height: 30px;
   border: none;
   outline: 0;
   -webkit-tap-highlight-color: transparent; }
@@ -5697,7 +5696,7 @@ ul.tabs li.tab {
 .btn, .btn-large {
   text-decoration: none;
   color: #FFF;
-  background-color: #26a69a;
+  background-color: #b71c1c ;
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transition: 0.2s ease-out;
@@ -5707,7 +5706,7 @@ ul.tabs li.tab {
   transition: 0.2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #2bbbad; }
+    background-color: ##b71c1c ; }
 
 .btn-floating {
   display: inline-block;
