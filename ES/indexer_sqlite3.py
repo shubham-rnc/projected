@@ -33,8 +33,8 @@ def bulkData(table_name, sqlite3_file, doc_type, f):
     data=get_data(sqlite3_file,table_name)
     bulk_data = []
 
-    data_dict={}
     for row in data:
+        data_dict={}
         for i,ele in enumerate(row):
             if i==0 and ele=='':
                 break
