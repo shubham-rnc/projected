@@ -1,10 +1,32 @@
+
+
 <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 
 <div class="row" >
-    <div class="col s2" >
-      
-        logo
+    <div class="col s2"  >
+      <div class=".tabs-wrapper" >
+      <div class="logo" style="min-height:200px">
+      <%= image_tag("2.png")        %>
+      </div>
+      <div class="infoboxitem">
+      <% if @institute.Established %><span class="infohead">Established</span>
+      <p class="specsboxquote"><%= @institute.Established %></p><% end %>
+      </div>
+      <div class="infoboxitem">
+      <% if @institute.affiliation %><span class="infohead">Affiliation</span>
+      <p class="specsboxquote"><%= @institute.affiliation %></p><% end %>
+      </div>
+      <div class="infoboxitem">
+      <% if @institute.address %><span class="infohead">Address</span>
+      <p class="specsboxquote"><%= @institute.address %></p><% end %>
+      </div>
+      <div class="infoboxitem">
+      <% if @institute.website %><span class="infohead">Website</span>
+      <p class="specsboxquote"><a href="http://<%= @institute.website %>" target="_blank"><%= @institute.website %></a></p><% end %>
+      </div>
+    </div>
+
     
     </div>
     <div class="col s10" >
@@ -16,17 +38,61 @@
         <h6><span style="border-bottom:2px solid #b71c1c"><b>About</b></span>  </h6> 
         <p align="justify" class="hide-on-small-only"><%= @institute.descintroduction %><a href="#">Know more...</a></p>  
 
-        <a class="btn " onClick="$('#courselist').openModal();">Courses offered</a>
+        <a class="btn " onClick="$('#courselist').openModal();$('ul.tabs').tabs();">Courses offered</a>
           
 
 
           <div id="courselist" class="modal">
               <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+                <h4>Course review</h4>
+                
+                  <div class="row">
+                      <div class="col s8">
+                        <ul class="tabs" style="background-color:#eee;color:#b71c1c">
+                          <li class="tab col s3" style="background-color:#eee;color:#b71c1c"><a href="#UG">Under Graduation</a></li>
+                          <li class="tab col s3" style="background-color:#eee;color:#b71c1c"><a class="active" href="#PG">Post Graduation</a></li>
+                          <li class="tab col s3" style="background-color:#eee;color:#b71c1c"><a href="#Doc">Doctorate</a></li>
+                        </ul>
+                      </div>
+                      <div id="UG" class="col s12">  
+                        <% @courses.each do |courselist| %>
+                          <% if courselist.level == "Under Graduation" %>
+                           <%= courselist.course %>
+                           <% end %>
+                        <% end %>
+                      </div>
+                      <div id="PG" class="col s12">
+                        <% @courses.each do |courselist| %>
+                          <% if courselist.level == "Post Graduation" %>
+                           <%= courselist.course %>
+                           <% end %>
+                        <% end %>
+                      </div>
+                      <div id="Doc" class="col s12">
+                          <% @courses.each do |courselist| %>
+                          <% if courselist.level == "Doctorate" %>
+                           <%= courselist.course %>
+                           <% end %>
+                        <% end %></div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               </div>
               <div class="modal-footer">
-                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Agree</a>
+                <a href="#" class=" btn-flat modal-action modal-close">Back</a>
               </div>
             </div>
 

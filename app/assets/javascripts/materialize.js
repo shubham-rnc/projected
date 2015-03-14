@@ -2872,9 +2872,9 @@ $(document).ready(function(){
     $.fn.pushpin = function (options) {
 
       var defaults = {
-        top: 0,
+        top: 10,
         bottom: Infinity,
-        offset: 0
+        offset: 10
       }
       options = $.extend(defaults, options);
 

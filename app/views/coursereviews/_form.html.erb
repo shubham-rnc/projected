@@ -11,6 +11,7 @@
     </div>
   <% end %>
   <% doajax = false unless (defined? doajax) %>
+<div id="reviewform" onClick="<% if current_user == nil%>$('#userbox').openModal();$('ul.tabs').tabs();<%end%>">
 <%= form_for(@coursereview,remote: true) do |f| %>
   <div class="field">
     <%= f.label :coursename %><br>
@@ -33,3 +34,14 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+
+<div id="userbox" class="modal">
+  <div class="modal-content">
+               
+
+
+
+               
+  </div>
+ </div>
