@@ -4,18 +4,22 @@
 
 <h1>Classmodium Search</h1>
  
-<%= form_for search_path, method: :get do |f| %>
+<%= form_tag("/search", method: :get) do  %>
   <p>
-    <%= f.label "Search for" %>
-    <%= text_field_tag :q, params[:q] %>
+    <%= label_tag(:q,"Search for:") %>
+    <%= text_field_tag(:q) %>
     <%= submit_tag "Go", name: nil %>
   </p>
 <% end %>
 
 <ul>
+<% begin %>
   <% @res['hits']['hits'].each do |results|%>
   	<a href="http://localhost:3000/institutepage/<%= results['_source']['slug'] %>"><%= results['_source']['slug'] %></a></br>
   	<%= results['_source']['descintroduction'] %></br>
   	<% end %>
+ <% rescue %>
+   No results 
+ <% end %>
     
 </ul>

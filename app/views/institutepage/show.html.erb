@@ -3,9 +3,9 @@
 <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 
-<div class="row" >
-    <div class="col s2"  >
-      <div class=".tabs-wrapper" >
+<div class="row" id="sticky">
+    <div class="col s2 " >
+      <div  >
       <div class="logo" style="min-height:200px">
       <%= image_tag("2.png")        %>
       </div>
@@ -122,3 +122,18 @@
 
     </div>
 </div> 
+
+<div style="width:300px">
+<div class="row">
+
+<%= form_tag("/search", method: :get) do  %>
+  <p>
+    <div class="col s10">
+    <%= text_field_tag(:q, nil ,:class => "browser-default",:placeholder => "Search") %>
+    </div>
+    <div class="col s2">
+    <%= submit_tag "Go", name: nil %>
+    </div>
+  </p>
+<% end %>
+</div>

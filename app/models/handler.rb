@@ -3,6 +3,8 @@ class Handler < ActiveRecord::Base
   belongs_to :institutehandler
   has_many :textreviews
 
+  	has_many :taggings, dependent: :destroy
+	has_many :tags, through: :taggings
 
  #validates starts
  	#validation starts for presence
@@ -30,6 +32,12 @@ class Handler < ActiveRecord::Base
       
 
 #validations ends here
+
+
+
+
+
+
 
 #field value auto pupulation
 

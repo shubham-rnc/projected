@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :coursereviews
+
+  has_many :tagattributions
+  has_many :taggings, through: :tagattributions
 end

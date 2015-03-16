@@ -7,9 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
   <%= csrf_meta_tags %>
   <script type="text/javscript">
-  $(document).ready(function(){
-    $('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
-  });
+  $('#my_div').sticky_div();
   </script>
   </head>
 <body>
