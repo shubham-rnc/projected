@@ -75,27 +75,21 @@
                            <% end %>
                         <% end %></div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              </div>
+             </div>
               <div class="modal-footer">
                 <a href="#" class=" btn-flat modal-action modal-close">Back</a>
               </div>
             </div>
-
+</br>
+            <% @courses.each do |courselist| %>
+              <%= courselist.course %>
+              </br>
+              <% courselist.tags.each do |tag| %>
+               <%= tag.tagname %>
+               </br>
+              <% end %>
+              </br>
+            <% end %>
 
 
 

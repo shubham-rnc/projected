@@ -3,6 +3,9 @@ class Institutehandler < ActiveRecord::Base
 	has_many :handlers
 	has_many :coursereviews
 
+	has_many :institutetaggings, dependent: :destroy
+	has_many :institutetags, through: :institutetaggings
+
 #validations
 	validates :name, presence: true, uniqueness: true
 	validates :affiliation, presence: true

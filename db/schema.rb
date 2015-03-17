@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316201013) do
+ActiveRecord::Schema.define(version: 20150317200301) do
 
   create_table "allowedvalueslevels", force: :cascade do |t|
     t.string   "values"
@@ -80,6 +80,32 @@ ActiveRecord::Schema.define(version: 20150316201013) do
 
   create_table "institutes", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "institutetagattributions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "institutetagging_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "institutetagattributions", ["institutetagging_id"], name: "index_institutetagattributions_on_institutetagging_id"
+  add_index "institutetagattributions", ["user_id"], name: "index_institutetagattributions_on_user_id"
+
+  create_table "institutetaggings", force: :cascade do |t|
+    t.integer  "institutehandler_id"
+    t.integer  "institutetag_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "institutetaggings", ["institutehandler_id"], name: "index_institutetaggings_on_institutehandler_id"
+  add_index "institutetaggings", ["institutetag_id"], name: "index_institutetaggings_on_institutetag_id"
+
+  create_table "institutetags", force: :cascade do |t|
+    t.string   "tagname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

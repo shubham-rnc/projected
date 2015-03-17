@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :tagattributions
   has_many :taggings, through: :tagattributions
+
+  has_many :institutetagattributions
+  has_many :institutetaggings, through: :institutetagattributions
 end
