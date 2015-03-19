@@ -86,11 +86,16 @@
               </br>
               <% courselist.tags.each do |tag| %>
                <%= tag.tagname %>
-               </br>
+
+
+                 </br>
               <% end %>
+              <% @institute.institutetags.each do |institag| %>
+                    <%= institag.tagname %>
+                  <% end %>
               </br>
             <% end %>
-
+      
 
 
 
@@ -100,7 +105,7 @@
 
 
             <div class="remoteform">
-            <h2> add review </h2>
+            </br>
             <%= render partial: 'coursereviews/form', locals: {doajax: true} %>
             </div>
   
