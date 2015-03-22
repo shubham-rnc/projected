@@ -11,6 +11,7 @@ class Handler < ActiveRecord::Base
 	validates :institutehandler_id, presence: true
 	validates :level, presence: true
 	validates :course, presence: true
+	validates :course, uniqueness: true
 	validates :activation, inclusion: {in: [true,false]}
 	validates :stream, presence: true
 	#validates :eligibility, presence: true

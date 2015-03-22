@@ -4807,7 +4807,7 @@ span.badge {
 
 @media only screen and (min-width : 993px) {
   .container {
-    width: 70%; }
+    width: 80%; }
  }
 
 .container .row {
@@ -6104,6 +6104,15 @@ button:focus {
 label {
   font-size: 0.8rem;
   color: #9e9e9e; }
+
+
+
+
+
+
+
+
+
 
 /***************************
    Text Inputs + Textarea

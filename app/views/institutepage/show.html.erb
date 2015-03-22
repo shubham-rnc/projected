@@ -38,35 +38,58 @@
         <h6><span style="border-bottom:2px solid #b71c1c"><b>About</b></span>  </h6> 
         <p align="justify" class="hide-on-small-only"><%= @institute.descintroduction %><a href="#">Know more...</a></p>  
 
-        <a class="btn " id="coursebutton" onClick="$('#courselist').openModal();$('ul.tabs').tabs();">Courses offered</a>
-<!-- autocomplete courses begins -->
+        
+<!-- Tag review system -->
+       
+          <input id="automplete-1" style="height:30px;width:40%" Placeholder="Search and select a course"> <a class="btn " id="coursechange" onClick="" >Go</a>&nbsp;&nbsp;-Or-&nbsp;&nbsp;<a class="btn " id="coursebutton" onClick="$('#courselist').openModal();$('ul.tabs').tabs();">All Courses</a>
+          </br>
+           <div id = "cousestoreview">
+            <% courseitem = @courses.first %>
+              <%= courseitem.course %>
+              </br>
+                  <% courseitem.tags.each do |tag| %>
+                   <%= tag.tagname %>
+                     </br>
+                  <% end %>
+                  <% @institute.institutetags.each do |institag| %>
+                    <%= institag.tagname %>
+                  <% end %>
+              </br>
+          </div>
+          <!-- autocomplete courses begins -->
           <% content_for :head do %>
-            <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-          <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-          <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-          <!-- Javascript -->
+                    <!-- Javascript -->
           <script>
              $(function() {
-                var availableTutorials = [];
+                var courseList = [];
                 var i = 0;
                 <% @listofcourses.each do |value| %>
-                availableTutorials[i] = "<%= value %>";
+                courseList[i] = "<%= value %>";
                 i = i+1
                 <% end %>
 
                 $( "#automplete-1" ).autocomplete({
-                   source: availableTutorials,
+                   source: function(request, response) {
+                        var results = $.ui.autocomplete.filter(courseList, request.term);
+                        
+                        response(results.slice(0, 10));
+                    },
                    autoFocus:true,
-                   
+                  
                 });
              });
+
+             function Demo (value) {
+               //code for getting value from code behind in the form of array
+               alert(value);
+              }
           </script>
           <% end %>
-          <div id = "cousestoreview">
-          <input id="automplete-1">
-          </div>
-          
-<!-- autocomplete courses ens -->
+          <!-- autocomplete courses ens -->
+
+         
+<!-- Tag review system ends-->
+
 <!-- Modal begins -->
           <div id="courselist" class="modal">
               <div class="modal-content">
@@ -108,21 +131,7 @@
             </div>
 <!-- Modal ends -->
 
-            </br>
-            <% @courses.each do |courselist| %>
-              <%= courselist.course %>
-              </br>
-              <% courselist.tags.each do |tag| %>
-               <%= tag.tagname %>
-
-
-                 </br>
-              <% end %>
-              <% @institute.institutetags.each do |institag| %>
-                    <%= institag.tagname %>
-                  <% end %>
-              </br>
-            <% end %>
+            
       
 
 
