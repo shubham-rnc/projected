@@ -47,12 +47,13 @@
           <!-- Javascript -->
           <script>
              $(function() {
-                var availableTutorials = [
-                   "Bachelor of Technology [B.Tech] (Aerospace Engineering)",
-                   "Boostrap",
-                   "C",
-                   "C++",
-                ];
+                var availableTutorials = [];
+                var i = 0;
+                <% @listofcourses.each do |value| %>
+                availableTutorials[i] = "<%= value %>";
+                i = i+1
+                <% end %>
+
                 $( "#automplete-1" ).autocomplete({
                    source: availableTutorials,
                    autoFocus:true,
@@ -64,6 +65,7 @@
           <div id = "cousestoreview">
           <input id="automplete-1">
           </div>
+          
 <!-- autocomplete courses ens -->
 <!-- Modal begins -->
           <div id="courselist" class="modal">
