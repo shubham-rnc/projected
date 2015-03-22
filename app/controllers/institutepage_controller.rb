@@ -4,5 +4,6 @@ class InstitutepageController < ApplicationController
 		@coursereview  = Coursereview.new
 		@coursereview.institutehandler 	= @institute
 		@courses = @institute.handlers
+		@listofcourses = @courses.pluck(:course)
 	end
 end

@@ -6,9 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
   <%= csrf_meta_tags %>
-  <script type="text/javscript">
-  $('#my_div').sticky_div();
-  </script>
+  <%= yield :head %>
   </head>
 <body>
 <!-- nav bar -->
