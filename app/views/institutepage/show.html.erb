@@ -41,10 +41,11 @@
         
 <!-- Tag review system -->
        
-          <input id="automplete-1" style="height:30px;width:40%" Placeholder="Search and select a course"> <a class="btn " id="coursechange" onClick="" >Go</a>&nbsp;&nbsp;-Or-&nbsp;&nbsp;<a class="btn " id="coursebutton" onClick="$('#courselist').openModal();$('ul.tabs').tabs();">All Courses</a>
+          <input id="automplete-1" style="height:30px;width:40%" Placeholder="Search and select a course"> <a class="btn " id="coursechange" onClick="getCourse()" >Go</a>&nbsp;&nbsp;-Or-&nbsp;&nbsp;<a class="btn " id="coursebutton" onClick="$('#courselist').openModal();$('ul.tabs').tabs();">All Courses</a>
           </br>
-           <div id = "cousestoreview">
-            <% courseitem = @courses.first %>
+           <div id = "coursetoreview">
+
+            <% courseitem = @courses[rand()*@courses.count] %>
               <%= courseitem.course %>
               </br>
                   <% courseitem.tags.each do |tag| %>
@@ -54,6 +55,7 @@
                   <% @institute.institutetags.each do |institag| %>
                     <%= institag.tagname %>
                   <% end %>
+              
               </br>
           </div>
           <!-- autocomplete courses begins -->
@@ -79,9 +81,35 @@
                 });
              });
 
-             function Demo (value) {
+             function getCourse() {
                //code for getting value from code behind in the form of array
-               alert(value);
+               
+               var coursename = document.getElementById("automplete-1").value;
+                var institag = [];
+                var temp1 = 0;
+                <% @institute.institutetags.each do |institag| %>
+                    institag[temp1] = "<%= institag.tagname %>";
+                    temp1 = temp1+1;
+                <% end %>
+
+                var coursetag = [];
+                var temp2 = 0;
+                <% @courses.each do |courseitem| %>
+                  <% courseitem.tags.each do |tag| %>
+                    if(coursename == "<%= courseitem.course %>"){
+                      coursetag[temp2] = "<%= tag.tagname %>";
+                      temp2 = temp2+1;
+                      var found = 1;
+                    }
+                  <% end %>
+                <% end %>
+            if(found == 1){
+               $("#coursetoreview").html(coursename+"</br>"+institag+"</br>"+coursetag);
+             }
+            else{
+              $("#coursetoreview").html("No such course");
+            }
+
               }
           </script>
           <% end %>
