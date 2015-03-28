@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
   post 'handlers/search' => 'handlers#search'
   get 'coursepage/:slug' => 'coursepage#show'
-  get 'institutepage/:slug' => 'institutepage#show'
+  get 'institutepage/:slug' => 'institutepage#show', as: :institutepage
+  post 'institutepage/coursetag' => 'institutepage#coursetag', as: :add_coursetag
+  post 'institutepage/institag' => 'institutepage#institag', as: :add_institag
   # You can have the root of your site routed with "root"
   root 'home#index'
  

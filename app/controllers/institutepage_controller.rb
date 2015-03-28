@@ -4,6 +4,14 @@ class InstitutepageController < ApplicationController
 		@coursereview  = Coursereview.new
 		@coursereview.institutehandler 	= @institute
 		@courses = @institute.handlers
-		@listofcourses = @courses.pluck(:course)
+		@listofcourses = @courses.pluck(:course)		
+	end
+
+	def coursetag
+		redirect_to :root
+	end
+
+	def institag
+		redirect_to :root
 	end
 end
