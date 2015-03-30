@@ -50,14 +50,14 @@
               <div id="coursetag">
                   <% courseitem.tags.each do |tag| %>
                    <%= tag.tagname %>
-                   <%= render :partial => 'coursetagform' %>
-
+                   <%= button_to "+1", add_coursetag_path(:taggig_id => courseitem.taggings.find_by(tag_id: tag.id).id)%>
                      </br>
                   <% end %>
                   </div>
                   <div id="institutetag">
                   <% @institute.institutetags.each do |institag| %>
                     <%= institag.tagname %>
+                    <%= button_to "+1", add_institag_path(:institutetagging_id => @institute.institutetaggings.find_by(institutetag_id: institag.id).id)%>
                   <% end %>
                   </div>
               
@@ -98,7 +98,7 @@
                       $("#coursename").html("<%= courseitem.course %>");
                       $("#coursetag").html("");
                       <% courseitem.tags.each do |tag| %>
-                      $("#coursetag").append("<%= tag.tagname %><%= escape_javascript(render(partial: 'coursetagform')) %>"+"</br>");   
+                      $("#coursetag").append("<%= tag.tagname %><%= escape_javascript(button_to '+1', add_coursetag_path(:tag_id => courseitem.taggings.find_by(tag_id: tag.id).id))%>"+"</br>");   
                       <% end %>
                       var coursefoundflag = 1;
                   }
